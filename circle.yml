@@ -1,0 +1,15 @@
+# dependencies:
+#   override:
+#     - meteor || curl https://install.meteor.com | /bin/sh
+#     - npm install -g gagarin
+
+# machine:
+#   pre:
+#     - curl https://install.meteor.com | sh
+#     - npm install -g gagarin
+#     - chromedriver --port=9515:
+#         background: true
+#
+# test:
+#   override:
+#     - gagarin -v -t 10000
