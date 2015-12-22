@@ -1,15 +1,19 @@
-# dependencies:
-#   override:
-#     - meteor || curl https://install.meteor.com | /bin/sh
-#     - npm install -g gagarin
+machine:
+  pre:
+    - brew update; brew cleanup; brew cask cleanup
+    - brew uninstall --force brew-cask; brew update
+    - brew install brew-cask
+    - brew install homebrew/versions/node010
+    - curl https://install.meteor.com | sh
+    - brew cask install google-chrome
+    - brew install chromedriver
 
-# machine:
-#   pre:
-#     - curl https://install.meteor.com | sh
-#     - npm install -g gagarin
-#     - chromedriver --port=9515:
-#         background: true
-#
-# test:
-#   override:
-#     - gagarin -v -t 10000
+dependencies:
+  pre:
+    - npm install -g gagarin
+    - chromedriver --port=9515:
+       background: true
+
+test:
+  override:
+    - gagarin -v -t 10000
