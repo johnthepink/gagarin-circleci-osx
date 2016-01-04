@@ -1,4 +1,4 @@
-# CircleCI and Gagarin starting point
+# CircleCI and Gagarin starting point in OSX Environment
 
 ## Testing
 
@@ -14,9 +14,17 @@ Then run `gagarin` using the following command in the root of the app, which sho
 $ gagarin --verbose
 ```
 
-If you are running locally, you'll need to make sure you have Chromedriver running in the background. You can download that here:
+If you are running locally, you'll need to make sure you have Chromedriver running in the background. You can install via npm:
 
-`http://chromedriver.storage.googleapis.com/index.html`
+```
+$ npm install -g chromedriver
+```
+
+Then, run in the background like so:
+
+```
+$ chromedriver &
+```
 
 And you may want to change the default timeout depending on the speed of your local computer:
 
